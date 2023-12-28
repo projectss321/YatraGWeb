@@ -1,0 +1,427 @@
+
+<div class="col-lg-10 col-md-10 col-sm-10 py-5 top">
+    <!-- For Demo Purpose-->
+    <header class="text-center mb-5">
+      <h1 class="display-4 font-weight-bold">YatraG Packages<i class="fa-solid fa-person-walking-luggage fa-beat fa-lg" style="color: #115cdf;"></i></h1>
+      <p class="font-italic text-muted mb-0">An awesome trip packages which affordable and valuable.</p>
+      <!-- <p class="font-italic text-muted">Snippet By <a href="https://bootstrapious.com" class="text-muted">
+          <u>Bootstrapious</u></a>
+      </p> -->
+    </header>
+  
+  
+    <!-- First Row [Prosucts]-->
+    <h2 class="font-weight-bold mb-2">From Our Heart <i class="fa-solid fa-heart fa-bounce fa-sm" style="color: #e0101a;"></i></h2>
+    <p class="font-italic text-muted mb-4">you can choose your trip plan according to your comfirtness <i class="fa-solid fa-face-smile fa-2lg"></i></p>
+  
+    <div class="row pb-5 mb-4">
+      <!-- <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 shadow-lg p-3 mb-5 bg-body rounded"> -->
+        <!-- Card-->
+        <div *ngFor="let package of packageData" class="card rounded shadow-sm border-0 shadow-lg p-3 mb-5 bg-body rounded" style="width: 30rem;">
+          <div class="card-body p-4"><img src= "{{imgsrc}}{{package?.destination?.img}}" alt="" class="img-fluid d-block mx-auto mb-3">
+            <h5> <a href="#" class="text-dark">{{package?.destination?.name}}</a></h5>
+            <p class="small text-muted font-italic">{{package?.destination?.header}}</p>
+            <ul class="list-inline small">
+              <li class="list-inline-item m-0"><i class="fa-solid fa-indian-rupee-sign fa-beat fa-sm" style="color: #0f62f0;"></i></li>
+              <li class="list-inline-item m-0"> &nbsp; {{package?.fare}} </li>
+              <!-- <li class="list-inline-item m-0"> &nbsp;-4 Days 3 Nights</li> -->
+            </ul>
+            <ul class="list-inline small">
+              <i class="fa-solid fa-car-side fa-fade fa-xl" style="color: #115cdf;"></i>
+              <li class="list-inline-item m-0">&nbsp; {{package?.vehicledetail?.seater}} Seater {{(package?.vehicledetail?.vehiclename)}}</li>
+              <!-- <li class="list-inline-item m-0">&nbsp;<i class="fa-solid fa-champagne-glasses fa-bounce fa-2xl" style="color: #ba1212;"></i></li> -->
+            </ul>
+            <ul class="list-inline small">
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
+            </ul>
+              <ul>
+              <input type="button" [disabled]="true" value="Add To Cart" class="btn btn-warning btn-lg">
+              <input type="button" value="Book Now" class="btn btn-primary ml-3 btn-lg">
+            </ul>
+          </div>
+        </div>
+      <!-- </div> -->
+
+       
+      </div>
+    <!-- </div> -->
+  
+  
+<!-- special packages -->
+
+<section class="pt-5 pb-5">
+  <div class="container">
+      <div class="row">
+          <div class="col-6">
+              <h3 class="mb-3">Special packages </h3>
+          </div>
+          <div class="col-6 text-right">
+              <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                  <i class="fa fa-arrow-left"></i>
+              </a>
+              <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                  <i class="fa fa-arrow-right"></i>
+              </a>
+          </div>
+          <div class="col-12">
+              <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+                  <div class="carousel-inner">
+                      <div class="carousel-item active">
+                          <div class="row">
+
+                              <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                      <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                      <div class="card-body">
+                                          <h4 class="card-title">Special title treatment</h4>
+                                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                      </div>
+
+                                  </div>
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                      <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+                                      <div class="card-body">
+                                          <h4 class="card-title">Special title treatment</h4>
+                                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                      <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
+                                      <div class="card-body">
+                                          <h4 class="card-title">Special title treatment</h4>
+                                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <div class="row">
+
+                              <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                      <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+                                      <div class="card-body">
+                                          <h4 class="card-title">Special title treatment</h4>
+                                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                      </div>
+
+                                  </div>
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                      <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                                      <div class="card-body">
+                                          <h4 class="card-title">Special title treatment</h4>
+                                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                      <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
+                                      <div class="card-body">
+                                          <h4 class="card-title">Special title treatment</h4>
+                                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <div class="row">
+
+                              <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                      <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
+                                      <div class="card-body">
+                                          <h4 class="card-title">Special title treatment</h4>
+                                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                      </div>
+
+                                  </div>
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                      <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
+                                      <div class="card-body">
+                                          <h4 class="card-title">Special title treatment</h4>
+                                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                      <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
+                                      <div class="card-body">
+                                          <h4 class="card-title">Special title treatment</h4>
+                                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+<!-- special packages end-->
+
+
+    <!-- Second Row [Team]-->
+    <h2 class="font-weight-bold mb-2">Our Team</h2>
+    <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+  
+    <div class="row pb-5 mb-4">
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card shadow-sm border-0 rounded">
+          <div class="card-body p-0"><img src="./assets/images/profile-1_dewapk.jpg" alt="" class="w-100 card-img-top">
+            <div class="p-4">
+              <h5 class="mb-0">Mark Rockwell</h5>
+              <p class="small text-muted">CEO - Consultant</p>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card shadow-sm border-0 rounded">
+          <div class="card-body p-0"><img src="./assets/images/profile-3_ybnq8v.jpg" alt="" class="w-100 card-img-top">
+            <div class="p-4">
+              <h5 class="mb-0">Mark Rockwell</h5>
+              <p class="small text-muted">CEO - Consultant</p>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card shadow-sm border-0 rounded">
+          <div class="card-body p-0"><img src="./assets/images/profile-2_ujssbj.jpg" alt="" class="w-100 card-img-top">
+            <div class="p-4">
+              <h5 class="mb-0">Mark Rockwell</h5>
+              <p class="small text-muted">CEO - Consultant</p>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card shadow-sm border-0 rounded">
+          <div class="card-body p-0"><img src="https://res.cloudinary.com/mhmd/image/upload/v1570799922/profile-2_ujssbj.jpg" alt="" class="w-100 card-img-top">
+            <div class="p-4">
+              <h5 class="mb-0">Mark Rockwell</h5>
+              <p class="small text-muted">CEO - Consultant</p>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Third Row [Profiles]-->
+    <h2 class="font-weight-bold mb-2">Active Profiles</h2>
+    <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+  
+    <div class="row pb-5 mb-4">
+  
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card rounded shadow-sm border-0">
+          <div class="card-body p-0">
+            <div class="bg-primary px-5 py-4 text-center card-img-top"><img src="./assets/images/teacher-4.jpg" alt="..." width="100" class="rounded-circle mb-2 img-thumbnail d-block mx-auto">
+              <h5 class="text-white mb-0">Emma Nevoresky</h5>
+              <p class="small text-white mb-0">Elite user</p>
+            </div>
+            <div class="p-4 d-flex justify-content-center">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                  <h5 class="font-weight-bold mb-0 d-block">241</h5><small class="text-muted"><i class="fa fa-picture-o mr-1 text-primary"></i>Photos</small>
+                </li>
+                <li class="list-inline-item">
+                  <h5 class="font-weight-bold mb-0 d-block">84K</h5><small class="text-muted"><i class="fa fa-user-circle-o mr-1 text-primary"></i>Followers</small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card rounded shadow-sm border-0">
+          <div class="card-body p-0">
+            <div class="bg-success px-5 py-4 text-center card-img-top"><img src="./assets/images/teacher-2.jpg" alt="..." width="100" class="rounded-circle mb-2 img-thumbnail d-block mx-auto">
+              <h5 class="text-white mb-0">Samuel Hardy</h5>
+              <p class="small text-white mb-0">Elite user</p>
+            </div>
+            <div class="p-4 d-flex justify-content-center">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                  <h5 class="font-weight-bold mb-0 d-block">241</h5><small class="text-muted"><i class="fa fa-picture-o mr-1 text-success"></i>Photos</small>
+                </li>
+                <li class="list-inline-item">
+                  <h5 class="font-weight-bold mb-0 d-block">84K</h5><small class="text-muted"><i class="fa fa-user-circle-o mr-1 text-success"></i>Followers</small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card rounded shadow-sm border-0">
+          <div class="card-body p-0">
+            <div class="bg-info px-5 py-4 text-center card-img-top"><img src="./assets/images/teacher-7.jpg" alt="..." width="100" class="rounded-circle mb-2 img-thumbnail d-block mx-auto">
+              <h5 class="text-white mb-0">Tom Sunderland</h5>
+              <p class="small text-white mb-0">Elite user</p>
+            </div>
+            <div class="p-4 d-flex justify-content-center">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                  <h5 class="font-weight-bold mb-0 d-block">241</h5><small class="text-muted"><i class="fa fa-picture-o mr-1 text-info"></i>Photos</small>
+                </li>
+                <li class="list-inline-item">
+                  <h5 class="font-weight-bold mb-0 d-block">84K</h5><small class="text-muted"><i class="fa fa-user-circle-o mr-1 text-info"></i>Followers</small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card rounded shadow-sm border-0">
+          <div class="card-body p-0">
+            <div class="bg-warning px-5 py-4 text-center card-img-top"><img src="./assets/images/teacher-1.jpg" alt="..." width="100" class="rounded-circle mb-2 img-thumbnail d-block mx-auto">
+              <h5 class="text-white mb-0">John Tarly</h5>
+              <p class="small text-white mb-0">Elite user</p>
+            </div>
+            <div class="p-4 d-flex justify-content-center">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                  <h5 class="font-weight-bold mb-0 d-block">241</h5><small class="text-muted"><i class="fa fa-picture-o mr-1 text-warning"></i>Photos</small>
+                </li>
+                <li class="list-inline-item">
+                  <h5 class="font-weight-bold mb-0 d-block">84K</h5><small class="text-muted"><i class="fa fa-user-circle-o mr-1 text-warning"></i>Followers</small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <!-- First Row [Statistics]-->
+    <h2 class="font-weight-bold mb-2">Latest Statistics</h2>
+    <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+  
+    <div class="row pb-5">
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card rounded shadow-sm border-0">
+          <div class="card-body p-5"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+            <h5>Products Sales</h5>
+            <p class="small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="progress rounded-pill">
+              <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;" class="progress-bar rounded-pill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card -->
+        <div class="card rounded shadow-sm border-0">
+          <div class="card-body p-5"><i class="fa fa-tasks fa-2x mb-3 text-success"></i>
+            <h5>Completed Tasks</h5>
+            <p class="small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="progress rounded-pill">
+              <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;" class="progress-bar bg-success rounded-pill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card -->
+        <div class="card rounded shadow-sm border-0">
+          <div class="card-body p-5"><i class="fa fa-user-circle-o fa-2x mb-3 text-info"></i>
+            <h5>New Users</h5>
+            <p class="small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="progress rounded-pill">
+              <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;" class="progress-bar bg-info rounded-pill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card -->
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <div class="card rounded shadow-sm border-0">
+          <div class="card-body p-5"><i class="fa fa-shopping-bag fa-2x mb-3 text-warning"></i>
+            <h5>New Products</h5>
+            <p class="small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="progress rounded-pill">
+              <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;" class="progress-bar bg-warning rounded-pill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

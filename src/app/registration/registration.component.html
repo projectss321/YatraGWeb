@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <div class="logo">
+        <img src="logo" alt="">
+    </div>
+    <div class="text-center mt-4 name">
+        YatraG
+    </div>
+    <form class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center">
+            <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
+            <input type="email" name="userName" [(ngModel)]="userName" [formControl]="user" id="userName" placeholder="Your Email id">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <!-- <i class="fa-solid fa-user"></i> -->
+            <input type="text" name="mobile" [(ngModel)]="usermobile" [formControl]="mobile" id="mobile" placeholder="Your Mobile No.">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <!-- <span class="fas fa-key"></span> -->
+            <input type="password" name="password" [(ngModel)]="userpassword" [formControl]="password" id="pwd" placeholder="Create Password">
+        </div>
+        <button class="btn mt-3" (click)="onSubmit()">Sign Up</button>
+    </form>
+    <div class="text-center fs-6">
+        <a routerLink="/login">Already have an account ? Login</a>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<html>
+<head>
+
+
+</head>
+<body>
+    <div class="alert success custom-alert" *ngIf="data.type == 'Success'">
+        <p> {{data.message}}</p>
+      </div>
+
+
+    <div class="alert info custom-alert" role="alert" *ngIf="data.type == 'Info'">
+      <p> {{data.message}}</p>
+      </div>
+
+
+
+    <div class="alert Warning custom-alert" *ngIf="data.type == 'Warning'">
+      <p> {{data.message}}</p>
+      </div>
+
+
+
+    <div class="alert danger custom-alert" *ngIf="data.type == 'Error'">
+      <p> {{data.message}}</p>
+      </div>
+    </body>
+      </html>

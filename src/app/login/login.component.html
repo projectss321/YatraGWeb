@@ -1,0 +1,22 @@
+<div class="wrapper">
+    <div class="logo">
+        <img src="logo" alt="">
+    </div>
+    <div class="text-center mt-4 name">
+        YatraG
+    </div>
+    <form class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="text" [(ngModel)]="user" [formControl]="userName" name="userName" id="userName" placeholder="Username">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" [(ngModel)]="pass" [formControl]="password" name="password" id="pwd" placeholder="Password">
+        </div>
+        <button class="btn mt-3" (click)="onLogin()">Login</button>
+    </form>
+    <div class="text-center fs-6">
+         <a routerLink="/registration">Recover Password ? </a> or <a routerLink="/registration">Sign up</a>
+    </div>
+</div>

@@ -1,0 +1,198 @@
+<div class="container-fluid px-1 py-5 mx-auto col-lg-3 col-md-3 col-sm-10">
+    <span class="text-center">Select City to Add/Update</span>
+    <select class="form-select" [(ngModel)]="cityLinkid" (change)="selectCity($event)"
+        aria-label="Default select example">
+        <option *ngFor="let city of cityData" [value]="city.linkid">{{city.name}}</option>
+    </select>
+    <!-- <button type="button" *ngIf="!isCityExist" (click)="" class="btn btn-primary">Click to Add City Detail</button> -->
+</div>
+
+<div class="container-fluid px-1 py-5 mx-auto" *ngIf="isCitySelected">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-9 col-lg-8 col-md-9 col-11 text-center">
+            <h3>{{isAddorEdit}} {{selectedCityData.name}} Details</h3>
+            <!-- <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for you.</p> -->
+            <div class="card shadow p-3 mb-5 bg-body rounded">
+                <!-- <h5 class="text-center mb-4">Powering world-class companies</h5> -->
+                <form class="form-card shadow p-5 mb-5 bg-body rounded">
+                    <h4>Headers</h4>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-3 flex-column d-flex"> <label
+                                class="form-control-label px-3">{{selectedCityData.name}} Header<span
+                                    class="text-danger"> *</span></label>
+                            <input [(ngModel)]="header" [formControl]="mainHead" type="text" id="headerfd" placeholder="Enter {{selectedCityData.name}} Header">
+                        </div>
+                        <div class="form-group col-sm-3 flex-column d-flex"> <label
+                                class="form-control-label px-3">{{selectedCityData.name}}
+                                Subheader<span class="text-danger"> *</span></label>
+                            <input type="text" [(ngModel)]="subhead" [formControl]="subHead" id="subhead" placeholder="Enter {{selectedCityData.name}} SubHeader">
+                        </div>
+                        <div class="form-group col-sm-3 flex-column d-flex"> <label
+                                class="form-control-label px-3">{{selectedCityData.name}}
+                                Subheader2<span class="text-danger"> *</span></label>
+                            <input type="text" [(ngModel)]="subhead2" [formControl]="subHead2" id="lname2" placeholder="Enter {{selectedCityData.name}} Subhead2">
+                        </div>
+                        <div class="form-group col-sm-3 flex-column d-flex"> <label
+                                class="form-control-label px-3">{{selectedCityData.name}}
+                                Subheader3<span class="text-danger"> *</span></label>
+                            <input type="text" [(ngModel)]="subhead3" [formControl]="subHead3" id="lname" name="lname"
+                                placeholder="Enter {{selectedCityData.name}} Subhead3">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <h4 class="d-flex justify-content-center">Images</h4>
+                        <!-- <div class="form-group"> -->
+                            <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                                <!-- <div class="circle">
+                                    <svg fill="currentColor" height="5" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+                                    </svg>
+                                </div> -->
+                                <!-- <form class="choose-files"> -->
+                                    <div class="button-wrapper">
+                                        <label class="label" (click)="fileInput.value == null" for="fileElem">Drag image here to upload or</label>
+                                        <button  type="button" for="fileElem" (change)="handleFiles(fileInput.files
+                                        )" class="btn">Choose image</button>
+                                        <input #fileInput type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles(fileInput.files)">
+
+
+                                        <!-- <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
+                                        <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button> -->
+
+
+
+                                    </div>
+                                <!-- </form> -->
+                                <!-- <div id="gallery"></div> -->
+                            </div>
+                            
+                            <!-- <div class="editor"> -->
+                                <!-- <div class="range-wrapper">
+                                    <label for="contrast">Contrast</label>
+                                    <input class="range" name="contrast" value="100" type="range" min="0" max="200" value="0" data-unit="%">
+                                </div>
+                                <div class="range-wrapper">
+                                    <label for="brightness">Brightness</label>
+                                    <input class="range" name="brightness" value="100" type="range" min="0" max="200" data-unit="%">
+                                </div>
+                                <div class="range-wrapper">
+                                    <label for="blur">Hue</label>
+                                    <input class="range" name="hue-rotate" value="0" type="range" min="0" max="200" data-unit="deg">
+                                </div>
+                                <div class="range-wrapper">
+                                    <label for="sepia">Sepia</label>
+                                    <input class="range" name="sepia" value="0" type="range" min="0" max="200" data-unit="%">
+                                </div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+
+                        <!-- <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                            <div class="button-wrapper">
+                                <label class="label" for="fileElem">Drag image here to upload or</label>
+                                <button type="button" for="fileElem" (change)="handleFiles($event)" class="btn">Choose image</button>
+                                <input type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles($event)">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                            <div class="button-wrapper">
+                                <label class="label" for="fileElem">Drag image here to upload or</label>
+                                <button type="button" for="fileElem" (change)="handleFiles($event)" class="btn">Choose image</button>
+                                <input type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles($event)">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                            <div class="button-wrapper">
+                                <label class="label" for="fileElem">Drag image here to upload or</label>
+                                <button type="button" for="fileElem" (change)="handleFiles($event)" class="btn">Choose image</button>
+                                <input type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles($event)">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                            <div class="button-wrapper">
+                                <label class="label" for="fileElem">Drag image here to upload or</label>
+                                <button type="button" for="fileElem" (change)="handleFiles($event)" class="btn">Choose image</button>
+                                <input type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles($event)">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                            <div class="button-wrapper">
+                                <label class="label" for="fileElem">Drag image here to upload or</label>
+                                <button type="button" for="fileElem" (change)="handleFiles($event)" class="btn">Choose image</button>
+                                <input type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles($event)">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                            <div class="button-wrapper">
+                                <label class="label" for="fileElem">Drag image here to upload or</label>
+                                <button type="button" for="fileElem" (change)="handleFiles($event)" class="btn">Choose image</button>
+                                <input type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles($event)">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                            <div class="button-wrapper">
+                                <label class="label" for="fileElem">Drag image here to upload or</label>
+                                <button type="button" for="fileElem" (change)="handleFiles($event)" class="btn">Choose image</button>
+                                <input type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles($event)">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                            <div class="button-wrapper">
+                                <label class="label" for="fileElem">Drag image here to upload or</label>
+                                <button type="button" for="fileElem" (change)="handleFiles($event)" class="btn">Choose image</button>
+                                <input type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles($event)">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                            <div class="button-wrapper">
+                                <label class="label" for="fileElem">Drag image here to upload or</label>
+                                <button type="button" for="fileElem" (change)="handleFiles($event)" class="btn">Choose image</button>
+                                <input type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles($event)">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                            <div class="button-wrapper">
+                                <label class="label" for="fileElem">Drag image here to upload or</label>
+                                <button type="button" for="fileElem" (change)="handleFiles($event)" class="btn">Choose image</button>
+                                <input type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles($event)">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                            <div class="button-wrapper">
+                                <label class="label" for="fileElem">Drag image here to upload or</label>
+                                <button type="button" for="fileElem" (change)="handleFiles($event)" class="btn">Choose image</button>
+                                <input type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles($event)">
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="form-group col-sm-3 flex-column d-flex shadow p-2 mb-5 bg-body rounded">
+                            <div class="button-wrapper">
+                                <label class="label" for="fileElem">Drag image here to upload or</label>
+                                <button type="button" for="fileElem" (change)="handleFiles($event)" class="btn">Choose image</button>
+                                <input type="file" id="fileElem" multiple accept="image/*" (change)="handleFiles($event)">
+                            </div>
+                        </div> -->
+                    </div>
+                        <div class="form-group col-sm-10 flex-column d-flex"> <label
+                                class="form-control-label">Description<span class="text-danger"> *</span></label>
+                                <textarea class="form-control" [(ngModel)]="cityDesc" [formControl]="cityDescription" id="exampleFormContea1" rows="5"></textarea>
+                        </div>
+                    <div class="row justify-content-end">
+                        <div class="form-group container-fluid col-sm-6"> <button type="submit" (click)="saveData()"
+                                class="btn-block btn-primary">{{isAddorEdit}} City</button> </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+.alert {
+overflow: hidden;
+width: auto;
+height: 1vw;
+float:right;
+position: fixed;    
+bottom: 0px;
+left:82%;
+border-radius: 4%;
+// transition-delay: 2s;
+}
+.success{
+    background-color:  #4CBB17;
+}
+.info{
+background-color: #FFA500;
+}
+.danger{
+    background-color: rgba(187, 47, 47, 0.836);
+}
+  p{
+        text-align: center;
+        margin: 0.9rem;
+        top: 60%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        height: 2vw;
+        position: relative;
+        color: #fff;
+        font-size: 2rem;
+  }
+
+ 
