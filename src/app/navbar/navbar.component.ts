@@ -34,6 +34,10 @@ export class NavbarComponent {
   cityDetailData: any;
   packageFinalData: any = [];
   @ViewChild(PackageComponent) PackageComponent: PackageComponent
+  map: google.maps.Map;
+  FromLocationData: any;
+  ToLocationData: any;
+  totalDistance:any;
   constructor(private helperService: HelperService, private httpservice: HttpService, private alertservice: AlertService, private route: Router, private activateroute: ActivatedRoute) {
     this.userloggedinData = this.helperService.getFromLocalStorageDec("loggedUserInfo");
     this.packageData = this.helperService.getFromLocalStorageDec("packageData");
@@ -50,10 +54,8 @@ export class NavbarComponent {
       }
     }, 1000);
     this.getCitiesList();
-
-
+    this.locate()
   }
-
   fromPlaceLinkid = new FormControl('', [Validators.required]);
   toPlaceLinkid = new FormControl('', [Validators.required]);
   fromDate = new FormControl('', [Validators.required]);
@@ -212,28 +214,83 @@ export class NavbarComponent {
 
 
   }
+  locate() {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(async function (position) {
+        var currentLatitude = position.coords.latitude;
+        var currentLongitude = position.coords.longitude;
+        const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
+        this.map = new Map(document.getElementById("map") as HTMLElement, {
+          center: { lat: currentLatitude, lng: currentLongitude },
+          zoom: 13,
+        });
+      });
+    }
+  }
+  FromLocation() {
+    var input = document.getElementById('fromloc') as HTMLInputElement;
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    let self = this;
+    google.maps.event.addListener(autocomplete, 'place_changed', async function () {
+      var place = autocomplete.getPlace();
+      self.FromLocationData = place
+      // const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
+      // this.map = new Map(document.getElementById("map") as HTMLElement, {
+      //   center: { lat: place.geometry.location.lat(), lng: place.geometry.location.lng() },
+      //   zoom: 13,
+      // });
+    });
+  }
+  ToLocation() {
+    var input = document.getElementById('toloc') as HTMLInputElement;
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    let self = this;
+    google.maps.event.addListener(autocomplete, 'place_changed', async function () {
+      var place = autocomplete.getPlace();
+      self.ToLocationData = place
+      // const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
+      // this.map = new Map(document.getElementById("map") as HTMLElement, {
+      //   center: { lat: place.geometry.location.lat(), lng: place.geometry.location.lng() },
+      //   zoom: 13,
+      // });
+    });
+  }
+  GetDirection() {
+    let self = this;
+    var Uimaps = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
 
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer({
+      draggable: true,
+      map: Uimaps
+    });
 
+    directionsService.route({
+      origin: { lat: self.FromLocationData.geometry.location.lat(), lng: self.FromLocationData.geometry.location.lng() },
+      destination: { lat: self.ToLocationData.geometry.location.lat(), lng: self.ToLocationData.geometry.location.lng() },
+      // waypoints: [{ location: c }],
+      travelMode: google.maps.TravelMode.DRIVING
 
-
-
-
-
-  // Add active class on another page linked
-  // ==========================================
-  // $(window).on('load',function () {
-  //     var current = location.pathname;
-  //     console.log(current);
-  //     $('#navbarSupportedContent ul li a').each(function(){
-  //         var $this = $(this);
-  //         // if the current path is like this link, make it active
-  //         if($this.attr('href').indexOf(current) !== -1){
-  //             $this.parent().addClass('active');
-  //             $this.parents('.menu-submenu').addClass('show-dropdown');
-  //             $this.parents('.menu-submenu').parent().addClass('active');
-  //         }else{
-  //             $this.parent().removeClass('active');
-  //         }
-  //     })
-  // });
+    }, function (response, status) {
+      if (status === 'OK') {
+        directionsDisplay.setDirections(response);
+        self.computeTotalDistance(response)
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
+  }
+  computeTotalDistance(result) {
+    var total = 0;
+    var myroute = result.routes[0];
+    for (var i = 0; i < myroute.legs.length; i++) {
+      total += myroute.legs[i].distance.value;
+    }
+    total = total / 1000;
+    console.log(total)
+    this.totalDistance=total+" KM"
+  }
 }

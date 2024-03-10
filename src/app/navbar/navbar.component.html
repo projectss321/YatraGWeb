@@ -171,6 +171,13 @@
                                         Package</button>
                                 </div>
                             </div>
+                            <input id="fromloc" type="text" placeholder="Enter a location"
+                                (input)="FromLocation()">
+                            <input id="toloc" type="text" placeholder="Enter a location"
+                                (input)="ToLocation()">
+                                <button (click)="GetDirection()">Get Package</button>
+                                {{totalDistance}}
+                            <div id="map"></div>
                         </div>
                     </form>
                 </div>

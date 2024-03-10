@@ -20,6 +20,8 @@ import { HttpService } from './services/http.service';
 import { HelperService } from './services/helperservice.service';
 import { AlertService } from './services/alert.service';
 import { AdminModule } from './admin/admin.module';
+import { GoogleMapsModule } from '@angular/google-maps';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { AdminModule } from './admin/admin.module';
     ReactiveFormsModule,
     HttpClientModule,
     NgOtpInputModule,
-    AdminModule
+    AdminModule,
+    GoogleMapsModule
   ],
   providers: [HttpService
     ,DatePipe
