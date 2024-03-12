@@ -9,11 +9,87 @@ import { path } from '../Globals/global';
 })
 export class PackageComponent {
 
-  packageData:any;
-  imgsrc = path.imgPath;
+  packageData = [];
+  imgsrc = "https://source.unsplash.com/random/200x200?sig=1";//path.imgPath;
   constructor(private helperservice: HelperService){
   }
   ngOnInit(){
-    this.packageData = this.helperservice.packageData;
+    let data = [{
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    },
+    {
+      fare: 35000,
+      destination : {name: "Jai Mata Di Travellers", header: "Specialist in provide best Services and exprience!", img: this.imgsrc},
+      vehicledetail: {seater: 7, vehiclename: "Ertiga"}
+    }
+  ]
+    this.packageData = data;//this.helperservice.packageData;
   }
 }
