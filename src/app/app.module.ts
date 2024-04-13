@@ -21,6 +21,7 @@ import { HelperService } from './services/helperservice.service';
 import { AlertService } from './services/alert.service';
 import { AdminModule } from './admin/admin.module';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
   providers: [HttpService
     ,DatePipe
     ,HelperService
-    ,AlertService],
+    ,AlertService, provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
